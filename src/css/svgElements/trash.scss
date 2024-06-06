@@ -1,0 +1,10 @@
+@import "../style.scss";
+
+.trash {
+    @extend .fill-styleColor-500;
+    @apply h-full;
+
+    &:hover {
+        @extend .fill-styleColor-700;
+    }
+}

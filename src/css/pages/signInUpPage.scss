@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "../style.scss";
+@import "../main.scss";
+
+.screen-container {
+    @apply h-screen;
+    @apply flex;
+    @apply items-center;
+    @apply justify-center;
+}
+
+.main-box {
+    @apply relative;
+    @apply w-1/4;
+    @apply border;
+    @apply rounded;
+    @apply border-styleColor-300;
+    @apply bg-styleColor-50;
+
+    h1 {
+        @apply text-xl;
+        @apply font-extrabold;
+    }
+
+    form {
+        @apply mt-3;
+        @apply h-3/4;
+    }
+}
+
+.send-button-box {
+    @apply absolute;
+    @apply bottom-0;
+    @apply left-0;
+    @apply right-0;
+    @apply mb-2;
+
+    div {
+        @extend .form-item-width-xposition;
+        @apply justify-end;
+    }
+
+    button {
+        @apply w-5/6;
+        @apply h-10;
+        @apply text-white;
+        @apply rounded-md;
+        @extend .bg-styleColor-600;
+
+        &:hover {
+            @extend .bg-styleColor-700;
+        }
+    }
+
+}
+
+.redirection-link {
+    @extend .link;
+    @apply ml-1;
+    @apply mr-1;
+    @apply  mb-2;
+}
+
+.form-item-width-xposition {
+    @apply w-5/6;
+    @apply inline-flex;
+}
+
+.form-item-height {
+    @apply h-14;
+}
+
+@mixin form-item-model {
+    @apply shadow-sm;
+    @extend .form-item-width-xposition;
+
+    p {
+        @extend .bg-styleColor-500;
+        @apply text-white;
+        @extend .form-item-height;
+        @apply flex;
+        @apply items-center;
+        @apply justify-center;
+        @apply w-1/4;
+    }
+
+    input {
+        @apply pl-2;
+        @extend .form-item-height;
+        @apply flex;
+        @apply items-center;
+        @apply justify-center;
+        @apply w-3/4;
+        @apply border-0
+    }
+
+    input[type="file"] {
+        @apply hidden;
+    }
+}
+
+.form-item {
+    @include form-item-model;
+    @apply border-b;
+    @extend .border-styleColor-300;
+}
+
+.form-item-top {
+    @extend .form-item;
+    @apply rounded-t-md;
+
+    p {
+        @apply rounded-tl-md;
+    }
+
+    input {
+        @apply rounded-tr-md;
+    }
+}
+
+.form-item-bottom {
+    @include form-item-model;
+    @apply rounded-b-md;
+
+    p {
+        @apply rounded-bl-md;
+    }
+
+    input {
+        @apply rounded-br-md;
+    }
+}
+
+.signInBoxHeight {
+    height: 30%;
+}

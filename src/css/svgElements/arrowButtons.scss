@@ -1,0 +1,11 @@
+@import "../style.scss";
+
+.arrow-button {
+    @extend .fill-styleColor-500;
+    @apply h-full;
+    @apply aspect-w-1;
+
+    &:hover {
+        @extend .fill-styleColor-700;
+    }
+}

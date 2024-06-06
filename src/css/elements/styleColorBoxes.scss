@@ -1,0 +1,23 @@
+@import "../style.scss";
+
+@mixin style-color-box-model {
+    @apply rounded;
+    @apply shadow-md;
+    @apply aspect-h-1;
+    @apply aspect-w-1;
+    @apply border-2;
+}
+
+.style-color-box {
+    @include style-color-box-model;
+    @apply border-transparent;
+
+    &:hover {
+        @extend .border-styleColor-300;
+    }
+}
+
+.style-color-box-current {
+    @include style-color-box-model;
+    @extend .border-styleColor-300;
+}

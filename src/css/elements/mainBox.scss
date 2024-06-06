@@ -1,0 +1,24 @@
+@import "../style.scss";
+
+.redirect-button {
+    @extend .fill-styleColor-500;
+    @apply h-8;
+    @apply m-1;
+
+    &:hover {
+        @extend .fill-styleColor-700;
+    }
+}
+
+.redirect-button-deactivated {
+    @extend .fill-styleColor-300;
+    @apply h-8;
+    @apply m-1;
+}
+
+.redirect-buttons-container {
+    @apply p-2;
+    @apply h-11;
+    @apply flex; 
+    @apply items-center;
+}

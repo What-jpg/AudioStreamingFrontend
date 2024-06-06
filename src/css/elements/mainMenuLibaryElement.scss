@@ -1,0 +1,42 @@
+@import "../style.scss";
+
+.main-menu-libary-element {
+    @extend .bg-styleColor-100;
+    @extend .border-styleColor-200;
+    @apply border;
+    @apply mx-1;
+    @apply rounded-md;
+    @apply h-16;
+    @apply flex;
+    @apply items-center;
+
+    &:hover {
+        @extend .bg-styleColor-200;
+    }
+}
+
+.main-menu-libary-element-active {
+    @extend .border-styleColor-400;
+    @extend .bg-styleColor-300;
+    @apply border-2;
+    @apply mx-1;
+    @apply rounded-md;
+    @apply h-16;
+    @apply flex;
+    @apply items-center;
+}
+
+.link-text-raw {
+    @extend .text-styleColor-800;
+    @apply text-sm;
+}
+
+.link-text {
+    @extend .link-text-raw;
+    @apply underline;
+
+    &:hover {
+        @extend .text-styleColor-600;
+        @apply underline;
+    }
+}

@@ -1,0 +1,19 @@
+@import "../style.scss";
+
+.play-button {
+    @extend .fill-styleColor-500;
+    @apply h-full;
+
+    &:hover {
+        @extend .fill-styleColor-700;
+    }
+}
+
+.play-button-inactive {
+    @extend .fill-styleColor-300;
+    @apply h-full;
+
+    &:hover {
+        @extend .fill-styleColor-300;
+    }
+}

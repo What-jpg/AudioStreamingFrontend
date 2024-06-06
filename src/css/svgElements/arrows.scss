@@ -1,0 +1,6 @@
+@import "../style.scss";
+
+.arrow {
+    @extend .fill-styleColor-600;
+    @apply mx-2;
+}

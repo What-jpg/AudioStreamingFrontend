@@ -1,0 +1,44 @@
+@import "../style.scss";
+
+.album-list-item {
+    @apply h-12;
+    @apply flex;
+    @apply items-center;
+
+    p {
+        @apply text-sm;
+    }
+}
+
+.album-list-item-active {
+    @extend .bg-styleColor-200;
+ }
+
+.album-list-item-number {
+    @apply mx-2
+}
+.album-list-item-number-box {
+    @apply flex;
+    @apply flex-col;
+    @apply items-center;
+    @apply w-12;
+}
+
+.album-list-item-name {
+    @apply text-start;
+    @apply font-extrabold;
+}
+
+.album-list-item-cover-box {
+    @apply h-full;
+    @apply flex;
+    @apply items-center;
+    @apply mr-2;
+}
+
+.album-list-item-cover {
+    @apply h-10;
+    @apply w-10;
+    @apply object-cover;
+    @apply rounded-md;
+}

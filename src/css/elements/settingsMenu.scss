@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "../style.scss";
+
+.settings-menu {
+    @apply fixed;
+    @apply top-3;
+    @apply right-3;
+    @apply w-1/5;
+}
+
+.settings-button-raw {
+    @apply p-1;
+    @apply rounded-full;
+}
+
+.settings-button {
+    @extend .settings-button-raw;
+    @extend .bg-styleColor-200;
+
+    &:hover {
+        @extend .bg-styleColor-400;
+    }
+}
+
+.settings-button-active {
+    @extend .settings-button-raw;
+    @extend .bg-styleColor-400;
+}
+
+.dropdopwn-arrow-container {
+    @apply mt-1;
+    @apply flex;
+    @apply justify-center;
+}
+
+.dropdown-arrow {
+    @extend .fill-styleColor-100;
+}
+
+.menu-box {
+    @extend .bg-styleColor-100;
+    @apply w-full;
+    @apply shadow-md;
+    @apply rounded;
+}
+
+.menu-option {
+    @apply p-1;
+    @apply rounded;
+    @apply flex;
+    @apply items-center;
+
+    &:hover {
+        @extend .bg-styleColor-200;
+    }
+}
+
+.settings-button-container {
+    @apply flex;
+    @apply justify-end;
+}

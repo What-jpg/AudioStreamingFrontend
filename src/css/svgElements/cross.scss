@@ -1,0 +1,13 @@
+@import "../style.scss";
+
+.cross {
+    @extend .bg-styleColor-200;
+    @apply ml-1;
+    @apply shadow-md;
+    @apply rounded-md;
+    @apply mr-2;
+
+    &:hover {
+        @extend .bg-styleColor-400;
+    }
+}

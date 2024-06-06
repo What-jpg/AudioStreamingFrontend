@@ -1,0 +1,3 @@
+export default function Play() {
+    return <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 314.41 314.41"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M288.318,145.307L39.832,1.841c-4.253-2.454-9.486-2.454-13.74,0c-4.249,2.452-6.871,6.991-6.871,11.898v286.93 c0,4.908,2.622,9.447,6.871,11.898c2.128,1.229,4.5,1.843,6.87,1.843c2.372,0,4.743-0.614,6.87-1.843l248.487-143.464 c4.25-2.452,6.871-6.991,6.871-11.898C295.189,152.297,292.568,147.759,288.318,145.307z M46.702,276.868V37.541l207.265,119.664 L46.702,276.868z"></path> </g> </g></svg>;
+}

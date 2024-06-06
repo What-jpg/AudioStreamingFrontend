@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "style.scss";
+
+.link {
+    @apply underline;
+    @extend .text-styleColor-800;
+
+    &:hover {
+        @extend .text-styleColor-400;
+    }
+}
+
+.gap-0\.25 {
+    gap: 0.0625rem;
+}
+
+.border-0\.25 {
+    border-width: 0.25px;
+}
+
+.min-h-60 {
+    min-height: 15rem;
+}
+
+.top--21{
+    top: -5.25rem;
+}
+
+.h-57\.3375 {
+    height: 14.334375rem;
+}
