@@ -2,19 +2,19 @@ import { NavigateFunction, useNavigate } from "react-router-dom";
 import { mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
 import PlayForSong from "../svgElements/PlayForSong";
 import { useEffect, useRef, useState } from "react";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import { DbFileStr } from "../slices/userSlice";
 import { hours, milliseconds, minutes, seconds } from "../functions/timeSpan";
-import { createUrlForDbFileAvatar, createUrlForDbFileCover } from "../elements/SettingsMenuCurrentPage";
+import { createUrlForDbFileAvatar, createUrlForDbFileCover } from "../jsxElements/SettingsMenuCurrentPage";
 import { serverUrl } from "../constants";
 import axios from "axios";
 import { useAppDispatch } from "../app/hooks";
 import { redirectToArtistPage, redirectToDiscPage } from "./DiscPage";
 import { AppDispatch } from "../app/store";
 import { setCurrentSong } from "../slices/currentSongSlice";
-import ContentContainer from "../elements/ContentContainer";
-import NavigationArrows from "../elements/NavigationArrows";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import ContentContainer from "../jsxElements/ContentContainer";
+import NavigationArrows from "../jsxElements/NavigationArrows";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export interface Disc {
     id: number;

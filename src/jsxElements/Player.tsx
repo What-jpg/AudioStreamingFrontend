@@ -11,7 +11,7 @@ import NextSong from "../svgElements/NextSong";
 import Sound from "../svgElements/Sound";
 import "../css/svgElements/playButton.scss";
 import { timeStampNumberToTimeStampString, timeStampToString } from "../pages/MainPage";
-import { mapUppercaseObjectPropsToLowercase, useAuth, useDidUpdateEffect } from "../contexts/AuthContext";
+import { createFormDataFromObject, mapUppercaseObjectPropsToLowercase, useAuth, useDidUpdateEffect } from "../contexts/AuthContext";
 import axios from "axios";
 import { serverUrl } from "../constants";
 import { setError } from "../slices/errorSlice";
@@ -131,17 +131,40 @@ export default function Player({ children }: ChildrenProp) {
         }).then(resp => updateSongParts(mapUppercaseObjectPropsToLowercase(resp.data), null)), dispatch);
     }
 
+    const stopStreamingSong = async () => {
+        await axios.post(`${serverUrl}/api/song/stopstreamingsong`, {
+            headers: {
+            "Authorization": `Bearer ${token.token}`
+            }
+        });
+    }
+
+    const stopStreamingSongForWindowClosing = () => {
+        if (songParts) {
+            navigator.sendBeacon(
+                `${serverUrl}/api/song/stopstreamingsongtokenbody`, 
+                createFormDataFromObject({token: `Bearer ${token.token}`})
+            );
+        }
+    }
+
+    const stopStreamingSongWithCheck = async () => {
+        if (songParts) {
+            stopStreamingSong()
+        }
+    }
+
     useEffect(() => {
         return () => {
-            if (songParts) {
-                axios.get(`${serverUrl}/api/song/stopstreamingsong`, {
-                    headers: {
-                    "Authorization": `Bearer ${token.token}`
-                    }
-                });
-            }
+            stopStreamingSongWithCheck()
         }
     }, []);
+
+    useEffect(() => {
+        window.onbeforeunload = stopStreamingSongForWindowClosing;
+
+        return () => window.removeEventListener("onbeforeunload", stopStreamingSongForWindowClosing);
+    }, [token, songParts])
 
     function addIndexWithNewSongsLoad(plusIndex: number) {
         if (currentSong && currentSong.currentSongIndex + plusIndex >= 0) {
@@ -162,11 +185,7 @@ export default function Player({ children }: ChildrenProp) {
                 songParts[0].onended = () => {
                     clearEverythingUp();
 
-                    axios.get(`${serverUrl}/api/song/stopstreamingsong`, {
-                        headers: {
-                        "Authorization": `Bearer ${token.token}`
-                        }
-                    });
+                    stopStreamingSong()
                     
                     const thisIntervalId = setInterval(() => {
                         if (audioCtx.current.state == "running") {
@@ -337,12 +356,12 @@ export default function Player({ children }: ChildrenProp) {
             element.disconnect();
         });
 
+        setSongParts(null);
+
         clearAudioCtx(audioCtx.current);      
 
         audioCtx.current = new AudioContext();
         gainNode.current = createGain(audioCtx.current);
-
-        setSongParts(null);
         
         setCurrentSongStartAt(0);
         setNextSongStartAt(0);

@@ -3,18 +3,18 @@ import "../css/elements/mainBox.scss"
 import "../css/elements/mainMenuLibaryElement.scss";
 import "../css/pages/albumPage.scss";
 import { useAppDispatch } from "../app/hooks";
-import ContentContainer from "../elements/ContentContainer";
+import ContentContainer from "../jsxElements/ContentContainer";
 import { createFormDataFromObject, useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import axios, { AxiosError } from "axios";
 import { serverUrl } from "../constants";
 import { setError } from "../slices/errorSlice";
-import { createUrlForCover } from "../elements/SettingsMenuCurrentPage";
-import SongListItemCreate from "../elements/SongListItemCreate";
+import { createUrlForCover } from "../jsxElements/SettingsMenuCurrentPage";
+import SongListItemCreate from "../jsxElements/SongListItemCreate";
 import { redirectToDiscPage } from "./DiscPage";
-import NavigationArrows from "../elements/NavigationArrows";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import NavigationArrows from "../jsxElements/NavigationArrows";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export interface CreateSongInfo {
     name: string; 

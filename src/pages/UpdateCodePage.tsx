@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import SettingsMenu from "../elements/SettingsMenu";
+import SettingsMenu from "../jsxElements/SettingsMenu";
 import Reload from "../svgElements/Reload";
 import { useNavigate, useParams } from "react-router-dom";
 import { createFormDataFromObject, mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import axios from "axios";
 import { serverUrl } from "../constants";
 import { useDispatch } from "react-redux";
 import { selectError, setError } from "../slices/errorSlice";
 import { setUser } from "../slices/userSlice";
 import { useAppSelector } from "../app/hooks";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export default function UpdateCodePage() {
     const [inputValue0, setInputsValue0] = useState("");

@@ -1,9 +1,9 @@
 import "../css/pages/signInUpPage.scss";
 
 import { useNavigate } from "react-router-dom";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import { useEffect, useState } from "react";
-import SettingsMenu from "../elements/SettingsMenu";
+import SettingsMenu from "../jsxElements/SettingsMenu";
 import { useAuth } from "../contexts/AuthContext";
 import { useAppDispatch } from "../app/hooks";
 import { setError } from "../slices/errorSlice";

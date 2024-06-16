@@ -4,7 +4,7 @@ import { serverUrl } from "../constants";
 import { useAppDispatch } from "../app/hooks";
 import { setError } from "../slices/errorSlice";
 import { deactivateSettingsMenu } from "../slices/settingsMenuSlice";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export interface Token {
     token: string;

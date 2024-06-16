@@ -8,21 +8,21 @@ import "../css/elements/mainMenuLibaryElement.scss";
 import "../css/pages/albumPage.scss";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { clearCurrentSong, selectCurrentSong, setCurrentSong, startCurrentSong, stopCurrentSong } from "../slices/currentSongSlice";
-import ContentContainer from "../elements/ContentContainer";
+import ContentContainer from "../jsxElements/ContentContainer";
 import { mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
 import { NavigateFunction, useNavigate, useParams } from "react-router-dom";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import axios from "axios";
 import { serverUrl } from "../constants";
 import { Disc, Song, timeStampToString } from "./MainPage";
 import { setError } from "../slices/errorSlice";
-import { createUrlForDbFileCover } from "../elements/SettingsMenuCurrentPage";
-import SongListItem from "../elements/SongListItem";
+import { createUrlForDbFileCover } from "../jsxElements/SettingsMenuCurrentPage";
+import SongListItem from "../jsxElements/SongListItem";
 import EditButton from "../svgElements/EditButton";
 import { selectUser } from "../slices/userSlice";
-import NavigationArrows from "../elements/NavigationArrows";
-import { getDiscsForUserLibrary } from "../elements/GlobalWapper";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import NavigationArrows from "../jsxElements/NavigationArrows";
+import { getDiscsForUserLibrary } from "../jsxElements/GlobalWapper";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export function getTotalTimeFromSongs(songs: Array<Song> | null | undefined) {
     let totalTimeSpan = 0;

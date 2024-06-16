@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import ContentContainer from "../elements/ContentContainer";
-import ErrorMessage from "../elements/ErrorMessage";
+import ContentContainer from "../jsxElements/ContentContainer";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import { Disc, DiscBox } from "./MainPage";
 import axios from "axios";
 import { serverUrl } from "../constants";
@@ -9,7 +9,7 @@ import { selectUser } from "../slices/userSlice";
 import { mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { setError } from "../slices/errorSlice";
-import NavigationArrows from "../elements/NavigationArrows";
+import NavigationArrows from "../jsxElements/NavigationArrows";
 
 export default function ThisUserDiscography() {
     const [discs, setDiscs] = useState<null | Disc[]>(null);

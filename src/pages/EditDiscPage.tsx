@@ -3,22 +3,22 @@ import "../css/elements/mainBox.scss"
 import "../css/elements/mainMenuLibaryElement.scss";
 import "../css/pages/albumPage.scss";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import ContentContainer from "../elements/ContentContainer";
+import ContentContainer from "../jsxElements/ContentContainer";
 import { createFormDataFromObject, mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import axios, { AxiosError } from "axios";
 import { serverUrl } from "../constants";
 import { Disc } from "./MainPage";
 import { setError } from "../slices/errorSlice";
-import { convertDbFileToBlob, createUrlForCover, createUrlForDbFileCover } from "../elements/SettingsMenuCurrentPage";
+import { convertDbFileToBlob, createUrlForCover, createUrlForDbFileCover } from "../jsxElements/SettingsMenuCurrentPage";
 import { selectUser } from "../slices/userSlice";
 import { CreateSongInfo } from "./NewDiscPage";
-import SongListItemUpdate, { DisplaySongInfo } from "../elements/SongListItemUpdate";
+import SongListItemUpdate, { DisplaySongInfo } from "../jsxElements/SongListItemUpdate";
 import Trash from "../svgElements/Trash";
 import { redirectToDiscPage } from "./DiscPage";
-import NavigationArrows from "../elements/NavigationArrows";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import NavigationArrows from "../jsxElements/NavigationArrows";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export interface EditSongInfoWithId {
     id: number;

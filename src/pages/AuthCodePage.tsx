@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import SettingsMenu from "../elements/SettingsMenu";
+import SettingsMenu from "../jsxElements/SettingsMenu";
 import Reload from "../svgElements/Reload";
 import { useNavigate, useParams } from "react-router-dom";
 import { axiosErrorToErrorForMessage, useAuth } from "../contexts/AuthContext";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import { AxiosError } from "axios";
 
 export default function AuthCodePage() {

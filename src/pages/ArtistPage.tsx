@@ -1,23 +1,23 @@
 import { useEffect, useRef, useState } from "react";
-import SongListItem from "../elements/SongListItem";
+import SongListItem from "../jsxElements/SongListItem";
 import PauseButton from "../svgElements/PauseButton";
 import PlayButton from "../svgElements/PlayButton";
 import HeartButtonFilled from "../svgElements/HeartButtonFilled";
 import HeartButton from "../svgElements/HeartButton";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { selectCurrentSong, setCurrentSong, startCurrentSong, stopCurrentSong } from "../slices/currentSongSlice";
-import ContentContainer from "../elements/ContentContainer";
+import ContentContainer from "../jsxElements/ContentContainer";
 import { useNavigate, useParams } from "react-router-dom";
 import { mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import { Artist, Disc, Song, getDiscType } from "./MainPage";
-import { createUrlForDbFileAvatar, createUrlForDbFileCover } from "../elements/SettingsMenuCurrentPage";
+import { createUrlForDbFileAvatar, createUrlForDbFileCover } from "../jsxElements/SettingsMenuCurrentPage";
 import axios from "axios";
 import { serverUrl } from "../constants";
 import { redirectToDiscPage } from "./DiscPage";
-import NavigationArrows from "../elements/NavigationArrows";
-import { getArtistsForUserLibrary } from "../elements/GlobalWapper";
-import { sendRequestWithCatch } from "../elements/MainMenuLibraryArtist";
+import NavigationArrows from "../jsxElements/NavigationArrows";
+import { getArtistsForUserLibrary } from "../jsxElements/GlobalWapper";
+import { sendRequestWithCatch } from "../jsxElements/MainMenuLibraryArtist";
 
 export default function ArtistPage() {
     const [likeIsActive, setLikeIsActive] = useState(false);
@@ -123,7 +123,6 @@ export default function ArtistPage() {
     }
 
     function DiscCategoryBoxArtist({ discs, title }: DiscCategoryBoxArtist) {
-        console.log(discs);
         return (
             <div>
                 <p className="text-xl text-left font-extrabold ml-1 mt-16 mb-1">{title}</p>

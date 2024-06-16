@@ -1,14 +1,14 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
-import ContentContainer from "../elements/ContentContainer";
+import ContentContainer from "../jsxElements/ContentContainer";
 import { mapUppercaseObjectPropsToLowercase, useAuth } from "../contexts/AuthContext";
 import { useEffect, useState } from "react";
-import ErrorMessage from "../elements/ErrorMessage";
+import ErrorMessage from "../jsxElements/ErrorMessage";
 import { Artist, ArtistBox, Disc, DiscBox, Song, SongBox } from "./MainPage";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { changeCurrentSearchAtIndex, changeCurrentSearchString, changeCurrentWhatToSearch, searchInAppKey, selectCurrentSearch } from "../slices/currentSearchSlice";
 import axios from "axios";
 import { searchBoxAlbumKey, searchBoxArtistKey, searchBoxSongKey, serverUrl } from "../constants";
-import NavigationArrows from "../elements/NavigationArrows";
+import NavigationArrows from "../jsxElements/NavigationArrows";
 
 interface SearchBox {
     searchKey: string;
